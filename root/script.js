@@ -1,9 +1,16 @@
 function n(x) {
 	return (typeof x == "string") ? x : x.join(" ")
 }
+function syncStore() {
+	var e = "store"
+	t.dir.split(' ').slice(1).forEach(f=>{
+		e+="['"+f+"']"
+	})
+	eval(e+"=t.dirObj")
+}
 var store = {
 	"home": {
-		"welcome.egc": ""
+		"welcome.egc": "log(Welcome to my odd website. You are smart enough to discover this)"
 	},
 	root: {
 
@@ -17,6 +24,7 @@ var t = {
 			if (typeof t.dirObj == "object") t.dirObj = t.dirObj[e]
 		})
 		this.dir = cd
+		syncStore()
 	},
 	dirObj: store,
 	error: c => t.t.error(c),
@@ -29,7 +37,9 @@ var t = {
 			}
 		},
 		echo: e => t.t.echo(n(e)),
-
+		ls: ()=>t.t.echo(Object.keys(t?.dirObj)),
+		cat: e=>{if(t?.dirObj.hasOwnProperty(n(e))&&typeof t.dirObj[n(e)]!="object")t.t.echo(t.dirObj[n(e)])},
+		mkdir: e=>{if(t.dirObj!==undefined)t.dirObj[e]=="t"}
 	}
 }
 $(() => {
@@ -42,7 +52,7 @@ $(() => {
 	}, {
 		onInit: (x) => {
 			t.t = x
-			//console.log = t.t.echo
+			console.log = t.t.echo
 			console.error = t.t.error
 		},
 		greetings: "",
