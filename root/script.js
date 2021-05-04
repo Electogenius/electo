@@ -46,7 +46,7 @@ var t = {
 		cat: e=>{if(t?.dirObj.hasOwnProperty(n(e))&&typeof t.dirObj[n(e)]!="object")t.t.echo(t.dirObj[n(e)])},
 		mkdir: e=>{t.dirObj[e]={};syncStore()},
 		"#":()=>{},
-		js:e=>eval(e), //hmm
+		js:e=>eval(n(e)), //hmm
 	}
 }
 $(() => {
