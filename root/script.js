@@ -3,12 +3,17 @@ function n(x) {
 }
 function syncStore() {
 	var e = "store"
-	t.dir.split(' ').slice(1).forEach(f=>{
+	if(t.dir!="/"){
+	t.dir.split('/').slice(1).forEach(f=>{
 		e+="['"+f+"']"
-	})
+	})}
+	//console.log(e);
 	eval(e+"=t.dirObj")
+	localStorage.setItem("t", JSON.stringify(store))
 }
-var store = {
+
+var store = {}
+var def = {
 	"home": {
 		"welcome.egc": "log(Welcome to my odd website. You are smart enough to discover this)"
 	},
@@ -39,7 +44,8 @@ var t = {
 		echo: e => t.t.echo(n(e)),
 		ls: ()=>t.t.echo(Object.keys(t?.dirObj)),
 		cat: e=>{if(t?.dirObj.hasOwnProperty(n(e))&&typeof t.dirObj[n(e)]!="object")t.t.echo(t.dirObj[n(e)])},
-		mkdir: e=>{if(t.dirObj!==undefined)t.dirObj[e]=="t"}
+		mkdir: e=>{t.dirObj[e]={};syncStore()},
+		"#":()=>{}
 	}
 }
 $(() => {
@@ -54,6 +60,13 @@ $(() => {
 			t.t = x
 			console.log = t.t.echo
 			console.error = t.t.error
+			if (localStorage.getItem("t") !== null) {
+					t.dirObj = JSON.parse(localStorage.t)
+					syncStore()
+					
+			}else{
+				store = def
+			}
 		},
 		greetings: "",
 		prompt: "/ $ "
