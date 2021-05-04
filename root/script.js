@@ -42,10 +42,11 @@ var t = {
 			}
 		},
 		echo: e => t.t.echo(n(e)),
-		ls: ()=>t.t.echo(Object.keys(t?.dirObj)),
+		ls: ()=>{try{t.t.echo(Object.keys(t?.dirObj))}catch(e){t.t.error("err")}},
 		cat: e=>{if(t?.dirObj.hasOwnProperty(n(e))&&typeof t.dirObj[n(e)]!="object")t.t.echo(t.dirObj[n(e)])},
 		mkdir: e=>{t.dirObj[e]={};syncStore()},
-		"#":()=>{}
+		"#":()=>{},
+		js:e=>eval(e), //hmm
 	}
 }
 $(() => {
@@ -63,7 +64,6 @@ $(() => {
 			if (localStorage.getItem("t") !== null) {
 					t.dirObj = JSON.parse(localStorage.t)
 					syncStore()
-					
 			}else{
 				store = def
 			}
