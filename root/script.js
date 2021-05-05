@@ -51,11 +51,11 @@ var t = {
 	},
 	c: {
 		cd: e => {
-			if (e.length !== 0 && e[0] !== "") {
+			if (e.length !== 0 && e[0] !== "" && e in def) {
 				let x = (n(e).startsWith("/")) ? e : t.dir + ((t.dir == "/") ? "" : "/") + n(e)
 				t.setdir(n(x));
 				t.t.set_prompt(t.dir + " $ ")
-			}
+			} else if(!(e in def)) t.error("No such directory exists")
 		},
 		echo: e => t.t.echo(n(e)),
 		ls: () => { try { t.t.echo(Object.keys(t?.dirObj)) } catch (e) { t.t.error("error listing contents") } },
