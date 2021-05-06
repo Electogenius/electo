@@ -51,17 +51,23 @@ var t = {
 	},
 	c: {
 		cd: e => {
-			if (e.length !== 0 && e[0] !== "" && e in def) {
+			
+			if (!(( ((n(e).startsWith("/")) ? n(e).slice(1): n(e)) in ((n(e).startsWith("/")) ? store : t.dirObj)))&&n(e)!="/") {
+				t.error("No such directory exists")
+			} else if (e.length !== 0 && e[0] !== "") {
 				let x = (n(e).startsWith("/")) ? e : t.dir + ((t.dir == "/") ? "" : "/") + n(e)
 				t.setdir(n(x));
 				t.t.set_prompt(t.dir + " $ ")
-			} else if(!(e in def)) t.error("No such directory exists")
+			}
+			//if (!(e in e.dirObj)) t.error("No such directory exists")
 		},
 		echo: e => t.t.echo(n(e)),
 		ls: () => { try { t.t.echo(Object.keys(t?.dirObj)) } catch (e) { t.t.error("error listing contents") } },
 		cat: e => { if (t.dirObj.hasOwnProperty(n(e)) && typeof t.dirObj[n(e)] != "object") t.t.echo(t.dirObj[n(e)]) },
-		mkdir: e => { t.dirObj[e] = {};
-			syncStore() },
+		mkdir: e => {
+			t.dirObj[e] = {};
+			syncStore()
+		},
 		"#": () => {},
 		js: e => console.log(eval(n(e))), //hmm
 	}
@@ -78,10 +84,10 @@ $(() => {
 			t.t = x
 			console.log = t.t.echo
 			console.error = t.t.error
-			if (localStorage.getItem("t") != null) {
+			if (localStorage.getItem("t") != null && localStorage.t !== "undefined") {
 				t.dirObj = JSON.parse(localStorage.t)
 				syncStore()
-			} 
+			}
 			if (Object.keys(store).length == 0) {
 				setTimeout(() => {
 					t.dirObj = def
