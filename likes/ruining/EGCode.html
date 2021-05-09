@@ -82,12 +82,14 @@
 		opacity: 0;
 	}*/
 </style>
-<script type="text/javascript" charset="utf-8" type="module">
-	var EGCode = await import("/compiler.mjs").then(()=>{
-		console.log(EGCode)
-	})
+<script type="module">
+	import egc from "https://cdn.statically.io/gh/electogenius/EGCode/main/compiler.module.js"
+	t(egc)
 </script>
 <script type="text/javascript" charset="utf-8">
+	function t(e){
+		EGCode=e
+	}
 	var editt
 	window.onload = function() {
 		document.querySelectorAll("*").forEach((e) => { e.style.opacity = 0 })
