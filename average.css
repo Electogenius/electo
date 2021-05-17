@@ -6,7 +6,12 @@ body{
 	font-size: 20px;
 }
 html:after{
-	content: ".eg"
+	content: ".eg";
+	float: right;
+	color: #888;
+	font-family: monospace;
+	margin-top: 50px;
+	padding-right: 5px;
 }
 h1{
 	border-bottom: 0.5px solid white
