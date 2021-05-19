@@ -4,6 +4,7 @@ body{
 	font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 	font-weight: 300;
 	font-size: 20px;
+	text-shadow: white 1px 1px 0px;
 }
 html:after{
 	content: ".eg";
@@ -22,11 +23,20 @@ pre{
 	padding: 3px;
 	border-radius: 5px;
 	color: floralwhite;
+	text-shadow: none;
+}
+button{
+	background-color: rgba(0,0,0,0.5);
+	color: white;
+	border: 1px solid dodgerblue;
+	border-radius: 5px;
+	font-size: inherit
 }
 @media (prefers-color-scheme: dark) {
 	body{
 		background-color: #110f00;
 		color: white;
+		text-shadow: none;
 	}
 	h1{
 		border-bottom: 0.5px solid white
