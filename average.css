@@ -1,6 +1,6 @@
 body{
-	background-color: #222;
-	color: white;
+	background-color: antiquewhite;
+	color: #111;
 	font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 	font-weight: 300;
 	font-size: 20px;
@@ -14,11 +14,21 @@ html:after{
 	padding-right: 5px;
 }
 h1{
-	border-bottom: 0.5px solid white
+	border-bottom: 1px solid black
 }
 pre{
 	font-family: "Roboto Mono", menlo, monospace;
-	background-color: #333;
+	background-color: #222;
 	padding: 3px;
 	border-radius: 5px;
+	color: floralwhite;
+}
+@media (prefers-color-scheme: dark) {
+	body{
+		background-color: #110f00;
+		color: white;
+	}
+	h1{
+		border-bottom: 0.5px solid white
+	}
 }
