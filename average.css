@@ -24,6 +24,7 @@ pre{
 	border-radius: 5px;
 	color: floralwhite;
 	text-shadow: none;
+	overflow: auto
 }
 button{
 	background-color: rgba(0,0,0,0.5);
