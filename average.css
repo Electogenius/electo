@@ -1,15 +1,17 @@
-body{
+body {
 	font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 	font-weight: 300;
 	font-size: 20px;
 	transition: 0.5s
 }
-body:not([data-dark]){
+
+body:not([data-dark="true"]) {
 	background-color: antiquewhite;
 	color: #111;
 	text-shadow: white 1px 1px 0px;
 }
-html:after{
+
+html:after {
 	content: ".eg";
 	float: right;
 	color: #888;
@@ -17,10 +19,12 @@ html:after{
 	margin-top: 50px;
 	padding-right: 5px;
 }
-body:not([data-dark]) h1{
+
+body:not([data-dark="true"]) h1 {
 	border-bottom: 1px solid black
 }
-pre{
+
+pre {
 	font-family: "Roboto Mono", menlo, monospace;
 	background-color: #222;
 	padding: 10px;
@@ -29,18 +33,21 @@ pre{
 	text-shadow: none;
 	overflow: auto
 }
-button{
-	background-color: rgba(0,0,0,0.5);
+
+button {
+	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	border: 1px solid dodgerblue;
 	border-radius: 5px;
 	font-size: inherit
 }
-body[data-dark]{
-		background-color: #110f00;
-		color: white;
-		text-shadow: none;
+
+body[data-dark="true"] {
+	background-color: #110f00;
+	color: white;
+	text-shadow: none;
 }
-body[data-dark] h1{
-		border-bottom: 0.5px solid white;
+
+body[data-dark="true"] h1 {
+	border-bottom: 0.5px solid white;
 }
