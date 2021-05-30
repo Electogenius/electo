@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://electogenius.github.io/electo/darkmodeswitch.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css" media="all">
+		a::after {
+			content: attr(href);
+			color: #0C9BFF;
+		}
+		input{
+			font-size: 20px;
+			width: 90vw;
+			background-color: #0C9BFF;
+			color: white;
+			padding: 10px;
+			box-shadow: 2px 2px 2px grey;
+		}
+	</style>
+</head>
+
+<body data-dark>
+	<h1>Hopscotch file &rarr; link</h1>
+	<input type="file" name="f" id="f" /><br />
+	Hopscotch link: <a id="h" href="(select file)"></a>
+	<br />
+	Awesome-E's project player&copy; link:<a href="(select file)" id="w"></a>
+	<script type="text/javascript" charset="utf-8">
+		f.onchange = (e) => {
+			let pr = e.target.files[0]
+			let reader = new FileReader()
+			reader.readAsText(pr, "utf-8")
+			reader.onload = function(e) {
+				let res = JSON.parse(e.target.result).uuid
+				h.href="https://c.gethopscotch.com/p/"+res
+				w.href="https://awesome-e.github.io/hs-tools/play-project/?id="+res
+			};
+		}
+	</script>
+</body>
+
+</html>
