@@ -20,6 +20,7 @@
 			box-shadow: 2px 2px 2px grey;
 		}
 	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/2.4.1/eruda.min.js" referrerpolicy="no-referrer"></script>
 </head>
 
 <body data-dark>
@@ -29,6 +30,7 @@
 	<br />
 	Awesome-E's project player&copy; link:<a href="(select file)" id="w"></a>
 	<script type="text/javascript" charset="utf-8">
+		eruda.init()
 		f.onchange = (e) => {
 			let pr = e.target.files[0]
 			let reader = new FileReader()
