@@ -20,7 +20,6 @@
 			box-shadow: 2px 2px 2px grey;
 		}
 	</style>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/2.4.1/eruda.min.js" referrerpolicy="no-referrer"></script>
 </head>
 
 <body data-dark>
@@ -30,16 +29,15 @@
 	<br />
 	Awesome-E's project player&copy; link:<a href="(select file)" id="w"></a>
 	<script type="text/javascript" charset="utf-8">
-		eruda.init()
 		f.onchange = (e) => {
 			let pr = e.target.files[0]
 			let reader = new FileReader()
-			reader.readAsText(pr, "utf-8")
+			reader.readAsText(pr)
 			reader.onload = function(e) {
-				let res = JSON.parse(e.target.result).uuid
+				window.res = JSON.parse(e.target.result)
 				console.log(res)
-				h.href="https://c.gethopscotch.com/p/"+res
-				w.href="https://awesome-e.github.io/hs-tools/play-project/?id="+res
+				h.href="https://c.gethopscotch.com/p/"+res.uuid
+				w.href="https://awesome-e.github.io/hs-tools/play-project/?id="+res.uuid
 			};
 		}
 	</script>
