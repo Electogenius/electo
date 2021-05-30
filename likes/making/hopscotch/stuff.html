@@ -37,6 +37,7 @@
 			reader.readAsText(pr, "utf-8")
 			reader.onload = function(e) {
 				let res = JSON.parse(e.target.result).uuid
+				console.log(res)
 				h.href="https://c.gethopscotch.com/p/"+res
 				w.href="https://awesome-e.github.io/hs-tools/play-project/?id="+res
 			};
