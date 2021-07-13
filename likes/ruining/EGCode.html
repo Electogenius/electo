@@ -42,6 +42,9 @@
 		padding: 10px;
 		display: none;
 	}*/
+	body{
+		padding: 5px;
+	}
 	.CodeMirror {
 		background-color: black;
 		color: white !important;
@@ -78,10 +81,22 @@
 		opacity: 0;
 	}*/
 	img{
-	border-radius: 5px
+		border-radius: 5px
 	}
 	body{
 		word-wrap: wrap
+	}
+	#tn{
+		overflow: auto;
+		width: 100vw;
+	}
+	#tn a{
+		color: #aaa;
+		padding: 10px;
+		border-bottom: 1px solid #aaa !important;
+	}
+	a{
+		color: #3184EF;
 	}
 </style>
 <script type="module">
@@ -112,11 +127,12 @@
 				EGCode
 			</a>
 		</t>
-	<span class="tabnav" style="display:inline;float:right">
-		<span class="tabnav-tabs" style="display:inline">
+	<span class="tabnav" id="tn">
+		<span class="tabnav-tabs">
 		<a class="tabnav-tab" href="https://electogenius.github.io/EGCode/help">Help guide</a>
 		<a class="tabnav-tab" href="https://electogenius.github.io/EGCode/docs">Documentation</a>
-		<a href="https://github.com/Electogenius/EGCode" class="tavnab-tab">GitHub</a>
+		<a class="tavnab-tab" href="https://github.com/Electogenius/EGCode">GitHub</a>
+		<a class="tavnab-tab" href="https://electogenius.github.io/EGCode/editor">Playground</a>
 		</span>
 	</span>
 	</div>
@@ -130,7 +146,9 @@
 	}catch(err){aa(err)}" class="a">► Run</button>
 	<h2>Output</h2>
 	<pre id="output" class="CodeMirror a"></pre>
-	<script src="AAAAAA.js" type="text/javascript" charset="utf-8"></script>
+	<p>Or mess around with it in the <a href="https://electogenius.github.io/EGCode/editor">online playground</a></p>
+	<div class="Toast Toast--warning"><span class="Toast-icon">ℹ︎
+	</span><span class="Toast-content">Note: the version has not reached 1.00 yet so the documentation will not be sufficient</span></div>
 </body>
 <script type="text/javascript" charset="utf-8">
 	console.log = function(text) {

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Random stuff</title>
+	<style type="text/css" media="all">
+		:root{
+			--pr:#DE8B36;
+		}
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			margin: 10px;
+		}
+		.mono{
+			font-family: ui-monospace,menlo,monospace;
+		}
+		.bgpr{
+			background-color: var(--pr);color:white;
+		}
+		.round{
+			border-radius: 5px
+		}
+		@keyframes up{
+			0%{
+				top:200vh;
+			}
+			100%{
+				top:0;
+			}
+		}
+		@keyframes close{
+			0%{
+				top:0;
+			}
+			100%{
+				top:100vh;
+			}
+		}
+		/*#titles{
+			padding-left:0;
+		}*/
+		#titles{
+			list-style-type: square;
+		}
+		.thing{
+			position: absolute;
+			background-color: #113;
+			color: white;
+			top:0;left:0;width:100vw;height:100%;
+			text-shadow: 1px 1px 0px black;
+			animation: up 1s ease-out;
+		}
+		.thing p,h1{
+			margin-left: 10px
+		}
+		hr{
+			border: 1px solid grey;
+			border-radius: 5px;
+			width:50vw;
+		}
+		.close{
+			color:#f34;
+			font-size: inherit;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			background: none;
+			border:none;
+		}
+		pre{
+			overflow: auto
+		}
+	</style>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+	<h1 class="mono bgpr round">electo.<wbr />randomStuff</h1>
+	<ul id="titles">
+		
+	</ul>
+	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
