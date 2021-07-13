@@ -7,6 +7,8 @@ My website I guess
   - /making
     - /hopscotch
       - /stuff: Generates the project player link for a .hopscotch file 
+    - /random
+      - /stuff: Kinda like a blog but less structured, ehh
     - /stereotypes: Don't mind (yet)
   - /ruining
     - /EGCode: EGCode's website
