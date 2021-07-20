@@ -10,7 +10,9 @@ fetch("./stuffs.md").then(e=>e.text()).then(r=>{
 		}
 		document.getElementById("titles").appendChild(title)
 	})
-	console.log(titles)
+	if (new URL(location.href).searchParams.get("id")) {
+		openp(Number(new URL(location.href).searchParams.get("id")))
+	}
 })
 function openp(id) {
 	let p=document.createElement("div")
