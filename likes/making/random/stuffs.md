@@ -14,3 +14,10 @@ Well it's barely usable but at least it automatically changes layout based on vi
 
 Try it:
 <iframe sandbox="allow-scripts" style="background-color:white" srcdoc="<input id=n oninput=f.srcdoc=n.value><iframe id=f>"></iframe>
+
+***
+# Watched pot
+___
+![img](https://i.imgur.com/upPZMdi.jpg)
+
+That's just his handwriting

@@ -53,6 +53,7 @@
 			top:0;left:0;width:100vw;height:100%;
 			text-shadow: 1px 1px 0px black;
 			animation: up 1s ease-out;
+			overflow: scroll
 		}
 		.thing p,h1,pre{
 			margin-left: 10px
@@ -80,6 +81,11 @@
 			outline: 2px dashed var(--pr);
 			border:none;
 			border-radius:5px;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			width: auto\9; /* ie8 */
 		}
 	</style>
 	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>

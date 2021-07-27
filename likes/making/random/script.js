@@ -1,5 +1,5 @@
 fetch("./stuffs.md").then(e=>e.text()).then(r=>{
-	let titles=r.split(/\*\*\*/g).map(e=>e.slice(0,e.indexOf("\n___\n"))).reverse()
+	let titles=r.split(/\*\*\*/g).map(e=>e.slice(0,e.indexOf("___"))).reverse()
 	window.posts=r.split(/\n\*\*\*\n?/g).reverse()
 	titles.forEach((th,nd)=>{
 		let title=document.createElement("li")
