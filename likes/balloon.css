@@ -23,7 +23,7 @@ input{
 	transform: translateX(50%);
 	padding-bottom: 20px
 }
-#submit{
+button{
 	background-color: white;
 	color:rgb(34,191,195);
 	border-radius: 5px;

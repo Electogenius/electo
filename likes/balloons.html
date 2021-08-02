@@ -25,6 +25,13 @@
 		getBalloons((document.getElementById("box").value.match(/[A-Za-z0-9\-_\.]/g)??[]).join(""))
 	}}
 	document.getElementById("box").onsearch=document.getElementById("submit").onclick
+	function retry(){
+		document.getElementById("submit").style.opacity="1"
+		document.getElementById("box").style.opacity="1"
+		document.getElementById("res").style.opacity="0"
+		document.getElementById("box").value=""
+		//document.getElementById("res").innerHTML='You have BLO$ <span id="num"></span>.'
+	}
 	function getBalloons(name){
 		let val
 		code.slice(code.indexOf("@")-2).split("\n").forEach(ln=>{
@@ -33,7 +40,8 @@
 			}
 		})
 		if(val!==undefined){document.getElementById("num").innerText=val}else{
-			document.getElementById("res").innerHTML="Oops, it seems there's no such user in the list. Maybe you made a typo or maybe you don't have any balloons yet<br />:("
+			document.getElementById("res").innerHTML="Oops, it seems there's no such user in the list. Maybe you made a typo or maybe you don't have any balloons yet<br />:(<br /><button id=retry>Try again?</button>"
+			document.getElementById("retry").onclick=retry
 		}
 	}
 </script>
