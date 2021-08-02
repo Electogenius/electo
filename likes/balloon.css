@@ -1,0 +1,40 @@
+body{
+	background: linear-gradient(0deg, rgb(34,191,195), rgb(255,39,0));
+	background-attachment: fixed;
+	font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+	color:white;
+	font-size: 30px;
+	text-align: center;
+	padding-top: 50px
+}
+input{
+	border-radius: 5px;
+	background-color:#555;
+	color:white;
+	outline:0;
+	font-size: 30px;
+	display:inline-block;
+	width:90vw;
+}
+#res{
+	opacity:0;
+	position: absolute;
+	right:50%;
+	transform: translateX(50%);
+	padding-bottom: 20px
+}
+#submit{
+	background-color: white;
+	color:rgb(34,191,195);
+	border-radius: 5px;
+	border:none;
+	font-size: 30px;
+	margin-top: 30px
+}
+input,button,#res{
+	transition: opacity 0.2s ease-in;
+}
+#num{
+	color:#00FF35;
+	font-family: ui-monospace,monospace
+}
