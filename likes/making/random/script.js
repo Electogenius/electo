@@ -3,7 +3,7 @@ fetch("./stuffs.md").then(e=>e.text()).then(r=>{
 	window.posts=r.split(/\n\*\*\*\n?/g).reverse()
 	titles.forEach((th,nd)=>{
 		let title=document.createElement("li")
-		title.innerHTML=marked(th)
+		title.innerHTML=marked.marked(th)
 		title.index=nd
 		title.onclick=(ev)=>{
 			openp(ev.target.parentNode.index)
@@ -17,7 +17,7 @@ fetch("./stuffs.md").then(e=>e.text()).then(r=>{
 function openp(id) {
 	let p=document.createElement("div")
 	p.classList.add("thing")
-	p.innerHTML=marked(posts[id])+`
+	p.innerHTML=marked.marked(posts[id])+`
 			<button class=close onclick=closep(this.parentNode)>close</button>
 			`
 	document.body.appendChild(p)
