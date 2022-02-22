@@ -1,11 +1,12 @@
 fetch("./stuffs.md").then(e=>e.text()).then(r=>{
-	let titles=r.split(/\*\*\*/g).map(e=>e.slice(0,e.indexOf("___"))).reverse()
-	window.posts=r.split(/\n\*\*\*\n?/g).reverse()
+	let titles=r.split(/\*\*\*/g).map(e=>e.slice(0,e.indexOf("___")))
+	window.posts=r.split(/\n\*\*\*\n?/g)
 	titles.forEach((th,nd)=>{
 		let title=document.createElement("li")
 		title.innerHTML=marked.marked(th)
 		title.index=nd
 		title.onclick=(ev)=>{
+		    history.pushState(0,"opened post", "?id="+ev.target.parentNode.index)
 			openp(ev.target.parentNode.index)
 		}
 		document.getElementById("titles").appendChild(title)
@@ -23,6 +24,7 @@ function openp(id) {
 	document.body.appendChild(p)
 }
 function closep(el) {
-	el.style.animation="1s close ease-out"
-	setTimeout(()=>el.remove(),1e3)
+	el.style.animation="0.5s close ease-out"
+	history.back()
+	setTimeout(()=>{el.remove()},500)
 }
